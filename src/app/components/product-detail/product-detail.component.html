@@ -1,0 +1,36 @@
+<!--Navbar-->
+<!-- <nav class="navbar bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" style="color: white;">E - Cart</a>
+        <button routerLink="/" class="btn btn-warning">Back</button>
+    </div>
+</nav> -->
+
+<!--Single Product display-->
+<div class="container">
+  <div class="row product-detail">
+    <div class="col-sm-3">
+      <img class="product-img" src="{{productdata?.images[0]}}">
+      <div (click)="buyNow()" class="btn btn-primary mt-4">Buy Now</div>&nbsp;
+      <div (click)="addtocart(productdata)" *ngIf="showadd" class="btn btn-success mt-4">Add to Cart</div>&nbsp;
+      <div (click)="removeitem(productdata)" *ngIf="showremove" class="btn btn-info mt-4">Remove Item</div>&nbsp;
+    </div>
+
+
+    <!--Right Side-->
+    <div class="col-sm-8">
+      <div>
+        <h1>{{productdata?.title}}</h1>
+        <p style="color: green;">Special Price </p>
+        <h3>Price:&nbsp;${{productdata?.price}}</h3>
+        <Strong>Category:&nbsp;{{productdata?.category}}</Strong><br>
+        <strong>Brand:&nbsp;{{productdata?.brand}}</strong><br>
+        <strong>Description:</strong><br>
+        <p>{{productdata?.description}}</p>
+        <p style="color: green;">Discount:&nbsp;{{productdata?.discountPercentage}} %</p><br>
+        <strong>Stocks:&nbsp;{{productdata?.stock}} units left</strong><br>
+        <strong>Ratings:&nbsp;{{productdata?.rating}}/5</strong><br>
+        <button class="btn btn-warning  mt-5" routerLink="/">Back</button>
+      </div>
+    </div>
+  </div>
